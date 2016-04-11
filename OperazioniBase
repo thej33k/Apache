@@ -1,0 +1,48 @@
+# Operazioni base di Apache: start, stop e restart
+
+Descrivere le semplici operazioni relative all'avvio, al riavvio e all'arresto di Apache, rappresenta un'utile occasione per approfondire il discorso riguardante il funzionamento di questo Web server.
+
+Innanzitutto, come funziona Apache? In pratica, al suo avvio esso genera un processo principale, noto come httpd, a cui si accompagnano tutta una serie di processi subordinati ognuno destinato ad una particolare funzione e tutti "in ascolto" (listening), pronti ad entrare in gioco nel caso sia necessario il loro intervento. I processi di Apache attendono gli input provenienti dai client attraverso una "porta", in genere la n°80; questo parametro può però essere modificato rimanendo nell'ambito delle prime 1024 porte.
+
+Nel momento del riavvio vengono arrestati tutti i processi secondari, rimane invece in vitahttpd che si occuperà di rigenerare gli altri proccessi seguendo le indicazioni del file di configurazione (httpd.conf).
+Quando invece, richiediamo ad Apache di arrestarsi il processo principale si spegnerà e causerà la "morte" di tutti i processi secondari.
+In Linux abbiamo la possibilità di avviare Apache e i suoi processi attraverso due comandi principali:
+
+```javascript
+/etc/rc.d/init.d/httpd
+```
+e
+```javascript
+apachectl
+```
+entrambi devono essere corredati dalle eventuali opzioni o argomenti: "start, "restart" e "stop".
+Così, nel caso di "/etc/rc.d/init.d/httpd" per avviare Apache digiteremo:
+```javascript
+/etc/rc.d/init.d/httpd start
+```
+Per riavviare Apache avremo poi:
+```javascript
+/etc/rc.d/init.d/httpd restart
+```
+Infine, per arrestare Apache utilizzeremo:
+```javascript
+/etc/rc.d/init.d/httpd stop
+```
+Stesso discorso per quanto riguarda "apachectl":
+apachectl start
+avvierà Apache. Il comando:
+```javascript
+apachectl restart
+```
+riavvierà il Web server e:
+```javascript
+apachectl stop
+```
+provvederà ad arrestarlo.
+
+Per quanto riguarda le medesime operazioni in ambiente Windows, non sarà necessario inoltrarci in descrizioni approfondite, ci limiteremo ad indicare le semplicissime procedure per l'avvio, il riavvio e l'arresto di Apache che il lettore potrà eseguire con pochi click del mouse:
+```
+Start / Programmi / Apache HTTP Server / Control Apache Server / Start
+Start / Programmi / Apache HTTP Server / Control Apache Server / Restart
+Start / Programmi / Apache HTTP Server / Control Apache Server / Stop
+```

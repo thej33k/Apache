@@ -1,0 +1,36 @@
+# Httpd.conf: il file di configurazione principale di Apache
+
+comportamenti e le funzionalità di Apache vengono stabilite da un file di configurazione chiamato httpd.conf modificabile attraverso un semplice editor di testo come Vim o Geditper Linux e NotePad per Windows.
+Se non ricordate la directory in cui avete installato Apache in Linux, generalmente:
+
+```
+/usr/local/apache/conf/
+```
+potrete facilmente accedere al percorso del file di configurazione digitando da Shell la riga di comando:
+```
+locate httpd.conf
+
+```
+Per quanto riguarda Windows, la directory di default è in genere:
+
+```
+C:\Programmi\Apache Group\Apache\conf
+
+```
+In alternativa basterà un semplice:
+
+```
+Start / Trova / File e Cartelle / httpd.conf
+
+```
+Editando httpd.conf troverete una lunga serie di istruzioni; alcune righe saranno precedute dal simbolo del cancelletto "#", ciò significa che sono state "commentate" e le istruzioni che contengono non avranno influenza sul funzionamento di Apache; in molti casi si tratta di semplici indicazioni riguardanti le diverse tipologie di configurazione.
+Le righe non precedute da "#" sono invece vere e proprie istruzioni di configurazione abilitate; prendiamo per esempio le righe:
+
+```
+
+#AddModule mod_rewrite.c AddModule mod_access.c
+```
+
+Il cancelletto davanti ad "AddModule mod_rewrite.c" indica che questo modulo non è abilitato e non lo sarà fino a quando questa riga non verrà "decommentata" eliminando il "#"; al contrario "AddModule mod_access.c" indica un modulo abilitato che potrà essere disabilitato inserendo il cancelletto a inizio riga.
+
+Come potrete notare httpd.conf è un file lungo e ricco di opzioni, non sarà possibile descriverle tutte in un unico capitolo, dedicheremo quindi i prossimi due a sottolineare nel miglior modo possibile le sue funzionalità principali.
