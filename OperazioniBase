@@ -38,7 +38,7 @@ riavvierà il Web server e:
 ```javascript
 apachectl stop
 ```
-provvederà ad arrestarlo.
+provvederà ad arrestare il Web server.
 
 Per quanto riguarda le medesime operazioni in ambiente Windows, non sarà necessario inoltrarci in descrizioni approfondite, ci limiteremo ad indicare le semplicissime procedure per l'avvio, il riavvio e l'arresto di Apache che il lettore potrà eseguire con pochi click del mouse:
 ```
